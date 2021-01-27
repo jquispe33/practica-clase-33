@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <title>AJAX II</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+  <h1 id="title">AJAX II</h1>
+  <form action="#" id="form">
+    <fieldset>
+      <legend>Inputs</legend>
+      <select name="characters" id="characters"></select>
+    </fieldset>
+    <fieldset>
+      <legend>What is Your Favorite Alignment?</legend>
+
+      <!-- Para que se pueda elegir clickeando en el nombre del aligment, 
+        lo envolví en un "label" y le añadí el atributo "for" 
+        que se liga al atributo "id" en el "input" -->
+
+      <!-- De esa manera no importa si clickeas en el checkbox o en el nombre -->
+
+      <!-- Incluso, así cómo está (el "label" envolviendo al "input") 
+        no necesita el atributo "for" ligado al "id" del "input", 
+        porque el "input" al ser hijo de "label" 
+        ya asume el navegador que clickeando en el texto 
+        lo que apuntas es al checkbox que tiene dentro la etiqueta "label" -->
+
+      <!-- Puedes probar si gustas, sacando fuera del "label" el "input" 
+        o quitando el atributo "for" y el atributo "id"
+      -->
+      <!-- 
+        Cuando usar una forma u otra? bno eso depende del proyecto y 
+        de qué forma te quede más cómodo a tí
+        yo uso esta, incluso sin el for y el id en los elementos
+        pero es bueno saber que hay más formas :)
+       -->
+      <label for="good">
+        <input type="radio" name="radiotest" id="good" value="Good">
+        Good
+      </label>
+      <label for="neutral">
+        <input type="radio" name="radiotest" id="neutral" value="Neutral">
+        Neutral
+      </label>
+      <label for="bad">
+        <input type="radio" name="radiotest" id="bad" value="Bad">
+        Bad
+      </label>
+    </fieldset>
+    <fieldset>
+      <legend>Get info</legend>
+      <!-- 
+        cambié inputs a botones porque por defecto son de tipo submit
+        no hay ninguna diferencia entre inputs de tipo submit o botones
+        es cuestión de gusto más bien :D
+       -->
+      <button id="get_heroe">Get Heroe</button>
+      <button id="get_alignment">Get Alingment</button>
+    </fieldset>
+  </form>
+
+
+  <table>
+    <thead>
+      <th>Name</th>
+      <th>Alignment</th>
+      <th>Hometown</th>
+      <th>Gender</th>
+      <th>Fighting Skills</th>
+    </thead>
+    <!-- 
+      Dorian en el ejercicio no usa el tbody de las tablas
+      yo lo agregué porque me queda más cómodo leer una tabla y ver rápidamente qué es cada parte
+     -->
+    <tbody id="t-body"></tbody>
+  </table>
+
+  <script src="scripts-rr.js"></script>
+  <!-- <script src="scripts.js"></script> -->
+</body>
+
+</html>
